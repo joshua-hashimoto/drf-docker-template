@@ -5,18 +5,18 @@
 ```yml
 version: "3"
 
-services: 
-    web:
+services:
+    api:
         build: .
         command: gunicorn core.wsgi -b 0.0.0.0:8000 # gunicorn対応
-        environment: 
+        environment:
             APPLICATION_NAME: django-docker-template
             ENVIRONMENT: development
             SECRET_KEY:
             DEBUG: 1
-        volumes: 
+        volumes:
             - .:/app
-        ports: 
+        ports:
             - 8000:8000
         depends_on:
             - db
