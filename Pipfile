@@ -1,0 +1,25 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+autopep8 = "*"
+
+[packages]
+django = "*"
+psycopg2-binary = "*"
+django-widget-tweaks = "*"
+pillow = "*"
+django-debug-toolbar = "*"
+django-admin-honeypot = "*"
+whitenoise = "*"
+gunicorn = "*"
+django-filter = "*"
+django-cleanup = "*"
+django-sass = "*"
+dj-database-url = "*"
+django-maintenance-mode = "*"
+
+[requires]
+python_version = "3.9"
