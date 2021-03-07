@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'dj_rest_auth',
     'dj_rest_auth.registration',
     'admin_honeypot',
+    'corsheaders',
     # local
     'users.apps.UsersConfig',
     'page_api.apps.PageApiConfig',
@@ -54,6 +55,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',  # corsheaders
     'whitenoise.middleware.WhiteNoiseMiddleware',  # whitenoise / for production
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

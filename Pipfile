@@ -21,6 +21,7 @@ gunicorn = "*"
 pillow = "*"
 psycopg2-binary = "*"
 whitenoise = "*"
+django-cors-headers = "*"
 
 [requires]
 python_version = "3.9"
