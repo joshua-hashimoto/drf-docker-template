@@ -4,15 +4,22 @@ from django.contrib import admin
 from django.urls import path, include
 
 
+def api_url(version: int = 1, path: str = ''):
+    base_url = f'api/v{version}'
+    if path:
+        return f'{base_url}/{path}/'
+    return base_url + '/'
+
+
 urlpatterns = [
     # django admin
     path('headquarters/', admin.site.urls),
     # third party
     path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
-    path('auth/registration/', include('dj_rest_auth.registration.urls')),
-    path('auth/', include('dj_rest_auth.urls')),
+    path(api_url('auth/registration'), include('dj_rest_auth.registration.urls')),
+    path(api_url('auth'), include('dj_rest_auth.urls')),
     # local apps
-    path('api/v1/', include('page_api.urls')),
+    path(api_url(), include('page_api.urls')),
 ]
 
 if settings.DEBUG:
