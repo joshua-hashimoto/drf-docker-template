@@ -4,7 +4,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 
-def api_url(version: int = 1, path: str = ''):
+def api_url(path: str = '', version: int = 1):
     base_url = f'api/v{version}'
     if path:
         return f'{base_url}/{path}/'
